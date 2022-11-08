@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor1"
+    tools:context=".activity.ListUserActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_Layout_search_user"
+        style="@style/Widget.AppTheme.TextInputLayoutList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColorHint="@color/secondaryTextColor"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/fab_search_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_search_github_user"
+            android:inputType="textPersonName"
+            android:lines="1"
+            android:textColor="@android:color/white"
+            android:textCursorDrawable="@drawable/color_text_cursor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_search_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/button_to_search_user"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@+id/input_Layout_search_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/input_Layout_search_user" />
+
+    <View
+        android:id="@+id/view"
+        style="@style/horizontal_divider_style"
+        android:layout_marginTop="14dp"
+        android:background="@color/backgroundColor5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Layout_search_user" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_user_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Layout_search_user"
+        tools:listitem="@layout/user_list_item"
+        tools:visibility="visible" />
+
+    <View
+        style="@style/horizontal_divider_style"
+        android:background="@color/backgroundColor5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_user_list"
+        style="@style/circle_progress_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_error"
+        style="@style/data_error_text"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Layout_search_user"
+        tools:text="No data"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_refresh_user_list"
+        style="@style/refresh_button_style"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_error"
+        tools:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

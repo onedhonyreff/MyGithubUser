@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item >
+        <shape android:shape="oval">
+            <solid android:color="@color/primaryColor"/>
+            <size android:height="20dp"
+                android:width="20dp"/>
+            <stroke android:width="2sp"
+                android:color="@color/backgroundColor5"
+                />
+        </shape>
+    </item>
+
+
+    <item android:drawable="@drawable/ic_mode_night"
+        android:bottom="8dp"
+        android:top="8dp"
+        android:left="8dp"
+        android:right="8dp"
+        />
+
+
+</layer-list>

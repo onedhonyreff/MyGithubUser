@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/backgroundColor1"
+    android:minHeight="340dp"
+    tools:context=".fragment.FollowListFragment">
+
+    <FrameLayout
+        android:id="@+id/fl_follow_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_follow_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:visibility="gone"
+            tools:listitem="@layout/user_list_item"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_no_followers_or_following"
+            style="@style/data_error_text"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            tools:text="Have no followers or don't follow anyone"
+            tools:visibility="gone" />
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_user_follow"
+        style="@style/circle_progress_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_fail_load_follow"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <TextView
+            style="@style/data_error_text"
+            android:text="@string/error_retrieve_follow_list_text" />
+
+        <Button
+            android:id="@+id/btn_refresh_follow_data"
+            style="@style/refresh_button_style"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

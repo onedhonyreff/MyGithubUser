@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginBottom="8dp"
+    android:background="@color/backgroundColor1"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/iv_avatar_thumbnail"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/profile_photo_tile"
+        android:src="@drawable/default_user_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/male5" />
+
+    <ImageButton
+        android:id="@+id/btn_delete_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/alertColor"
+        android:contentDescription="@string/button_to_delete_from_list"
+        android:src="@drawable/ic_trash"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar_thumbnail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_avatar_thumbnail"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/single_text_preview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar_thumbnail"
+        app:layout_constraintEnd_toStartOf="@+id/btn_delete_user"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar_thumbnail"
+        app:layout_constraintTop_toTopOf="@+id/iv_avatar_thumbnail"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Name of user" />
+
+    <TextView
+        android:id="@+id/tv_user_github_link"
+        style="@style/single_text_preview.user_data"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawablePadding="4dp"
+        android:gravity="center|start"
+        android:textSize="12sp"
+        app:drawableStartCompat="@drawable/ic_link"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar_thumbnail"
+        app:layout_constraintEnd_toEndOf="@+id/tv_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:text="https://github.com/user" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
