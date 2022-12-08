@@ -32,8 +32,6 @@ class SplashScreen : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Toast.makeText(this, "ghp_y9uoMhFSH0Anobni" + BuildConfig.GITHUB_TOKEN, Toast.LENGTH_SHORT).show()
-
         val pref = SettingPreferences.getInstance(dataStore)
 
         val viewModel = ViewModelProvider(this, SettingsFactory(pref)).get(
