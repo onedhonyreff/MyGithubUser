@@ -8,8 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
     companion object {
-//        private const val TOKEN = "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"
-        private const val TOKEN = "Dummy Token"
+//        private const val TOKEN = "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"
         fun getApiService(): ApiService {
             val loggingInterceptor =
                 HttpLoggingInterceptor()

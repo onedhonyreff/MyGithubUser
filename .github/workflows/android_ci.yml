@@ -24,6 +24,12 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
+      - name: Create Local Properties File
+        run: touch local.properties
+
+      - name: Add secret API Key
+        run: echo "GITHUB_TOKEN=\""${{ secrets.ACCESS_TOKEN }}"\"" >> local.properties
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build APK
