@@ -18,13 +18,13 @@ class ApiConfig {
                     )
             val client = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
-                .addInterceptor {
-                    it.proceed(
-                        it.request().newBuilder()
-//                            .addHeader("Authorization", "token ${BuildConfig.GITHUB_TOKEN}").build()
-                            .addHeader("Authorization", "token $TOKEN").build()
-                    )
-                }
+//                .addInterceptor {
+//                    it.proceed(
+//                        it.request().newBuilder()
+////                            .addHeader("Authorization", "token ${BuildConfig.GITHUB_TOKEN}").build()
+//                            .addHeader("Authorization", "token $TOKEN").build()
+//                    )
+//                }
                 .build()
             val retrofit = Retrofit.Builder()
                 .baseUrl("https://api.github.com/")
