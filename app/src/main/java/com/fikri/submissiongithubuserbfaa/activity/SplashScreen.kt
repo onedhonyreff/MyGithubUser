@@ -80,7 +80,7 @@ class SplashScreen : AppCompatActivity() {
 
 
 
-// cara membuat callback pada fungsi. (seperti di javascript
+// cara membuat callback pada fungsi. (seperti di javascript)
 
 //    private fun ambilNama(): String{
 //        return "Dhony"
