@@ -32,7 +32,7 @@ class SplashScreen : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Toast.makeText(this, BuildConfig.GITHUB_TOKEN, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Token:" + BuildConfig.GITHUB_TOKEN, Toast.LENGTH_SHORT).show()
 
         val pref = SettingPreferences.getInstance(dataStore)
 
