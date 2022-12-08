@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -13,6 +14,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.fikri.submissiongithubuserbfaa.BuildConfig
 import com.fikri.submissiongithubuserbfaa.R
 import com.fikri.submissiongithubuserbfaa.databinding.ActivitySplashScreenBinding
 import com.fikri.submissiongithubuserbfaa.other_class.SettingPreferences
@@ -29,6 +31,8 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Toast.makeText(this, BuildConfig.GITHUB_TOKEN, Toast.LENGTH_SHORT).show()
 
         val pref = SettingPreferences.getInstance(dataStore)
 
